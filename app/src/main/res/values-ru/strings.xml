@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LocalizedAppCherepanov</string>
+
+    <string name="greeting">Привет мир!</string>
+    <string name="switch_lang_btn">сменить язык!</string>
+    <string name="switch_indent_btn">сменить отступ!</string>
+
+    <string-array name="indents">
+        <item>маленький отступ</item>
+        <item>средний отступ</item>
+        <item>большой отступ</item>
+    </string-array>
+
+    <string-array name="language_selector">
+        <item>English</item>
+        <item>Русский</item>
+        <item>日本語</item>
+    </string-array>
+</resources>

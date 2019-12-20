@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">LocalizedAppCherepanov</string>
+
+    <string name="greeting">Hello world!</string>
+    <string name="switch_lang_btn">switch language!</string>
+    <string name="switch_indent_btn">switch color!</string>
+
+    <string-array name="indents">
+        <item>small indentation</item>
+        <item>middle indent</item>
+        <item>big indent</item>
+    </string-array>
+
+    <string-array name="language_selector">
+        <item>English</item>
+        <item>Русский</item>
+        <item>日本語</item>
+    </string-array>
+</resources>
