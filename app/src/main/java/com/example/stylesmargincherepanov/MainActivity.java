@@ -5,22 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.LocaleList;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static Spinner mLocaleSpinner;
-    private static Spinner mThemeSwitchSpinner;
-    private static Button mSwitchLangBtn;
-    private static Button mSwitchIndentBtn;
+    private Spinner mLocaleSpinner;
+    private Spinner mThemeSwitchSpinner;
+    private Button mSwitchLangBtn;
+    private Button mSwitchIndentBtn;
     private static Locale localeRU = new Locale("ru");
     private static Locale localeEN = new Locale("en");
     private static Locale localeJP = new Locale("ja");
@@ -41,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         mThemeSwitchSpinner = findViewById(R.id.themeSwitchSpinner);
         initLocaleSpinner();
         initThemeSwitchSpinner();
+        switchThemeBtnAction();
+        switchLanguageBtnAction();
     }
 
     private void initLocaleSpinner() {
@@ -88,35 +88,33 @@ public class MainActivity extends AppCompatActivity {
         switch (language) {
             case "Русский" :
                 config.setLocale(localeRU);
-                switchLanguageBtnAction();
                 break;
 
             case "English" :
                 config.setLocale(localeEN);
-                switchLanguageBtnAction();
                 break;
 
             case "日本語" :
                 config.setLocale(localeJP);
-                switchLanguageBtnAction();
 
             default:break;
         }
     }
 
     private void changeIndent(int position) {
+        final int THEME_SMALL_INDENT = 0;
+        final int THEME_MIDDLE_INDENT = 1;
+        final int THEME_BIG_INDENT = 2;
+
         switch (position) {
-            case 0 :
+            case THEME_SMALL_INDENT :
                 Utils.changeToTheme(Utils.THEME_SMALL_INDENT);
-                switchThemeBtnAction();
                 break;
-            case 1 :
+            case THEME_MIDDLE_INDENT :
                 Utils.changeToTheme(Utils.THEME_MIDDLE_INDENT);
-                switchThemeBtnAction();
                 break;
-            case 2 :
+            case THEME_BIG_INDENT :
                 Utils.changeToTheme(Utils.THEME_BIG_INDENT);
-                switchThemeBtnAction();
                 break;
             default:
         }
